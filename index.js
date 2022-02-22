@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: 'Psalms93jesus!',
     database: 'Employee_Tracker',
 });
 
@@ -148,10 +148,10 @@ function addDepartment() {
 function addRoles() {
     console.log('aa');
 
-    // query all the depts
+    
     connection.promise().query("SELECT * FROM Department")
         .then((res) => {
-            // make the choice dept arr
+           
             return res[0].map(dept => {
                 return {
                     name: dept.name,
@@ -314,7 +314,7 @@ function updateEmployeeRole() {
 
         })
         .then(res => {
-            // console.log(res);
+          
             console.log('Updated Manager Successfully')
             runList();
         })
@@ -329,7 +329,7 @@ function updateEmployeeRole() {
 function deleteDepartment() {
     connection.promise().query('SELECT * FROM Department')
         .then((res) => {
-            // make the choice dept arr
+          
             return res[0].map(dept => {
                 return {
                     name: dept.name,
@@ -353,7 +353,7 @@ function deleteDepartment() {
 
         })
         .then(res => {
-            // console.log(res);
+          
             console.log('Department Deleted Successfully')
             runList();
         })
@@ -367,7 +367,7 @@ function deleteDepartment() {
 function deleteEmployee() {
     connection.promise().query('SELECT * FROM employee')
         .then((res) => {
-            // make the choice dept arr
+          
             return res[0].map(emp => {
                 return {
                     name: emp.first_name,
@@ -391,7 +391,7 @@ function deleteEmployee() {
 
         })
         .then(res => {
-            // console.log(res);
+           
             console.log('Employee Deleted Successfully')
             runList();
         })
@@ -405,7 +405,7 @@ function deleteEmployee() {
 function deleteRole() {
     connection.promise().query('SELECT title, id FROM role')
         .then((res) => {
-            // make the choice dept arr
+       
             return res[0].map(roles => {
                 return {
                     name: roles.title,
@@ -429,7 +429,7 @@ function deleteRole() {
 
         })
         .then(res => {
-            // console.log(res);
+           
             console.log('Role Deleted Successfully')
             runList();
         })
@@ -444,7 +444,7 @@ function deleteRole() {
 function updateManager() {
     connection.promise().query('SELECT *  FROM employee')
         .then((res) => {
-            // make the choice dept arr
+        
             return res[0].map(employee => {
                 return {
                     name: employee.first_name,
@@ -482,7 +482,7 @@ function updateManager() {
 
         })
         .then(res => {
-            // console.log(res);
+          
             console.log('Updated Manager Successfully')
             runList();
         })
