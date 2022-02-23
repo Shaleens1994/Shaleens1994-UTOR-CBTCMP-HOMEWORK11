@@ -1,4 +1,4 @@
-USE employee_tracker; 
+USE employee; 
 
 INSERT INTO Department (name)
 VALUES ('Customer Care'),
